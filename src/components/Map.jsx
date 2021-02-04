@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import MapGL, { Source, Layer } from '@urbica/react-map-gl';
+import MapGL from '@urbica/react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { MAPBOX_ACCESS_TOKEN } from "../constants";
+import { Sources } from "./Sources";
+import { Layers } from "./Layers";
+
 
 export const MapComponent = () => {
   const [viewport, setViewport] = useState({
@@ -19,34 +22,8 @@ export const MapComponent = () => {
         {...viewport}
         onViewportChange={setViewport}
       >
-        <Source id='countries' type='geojson' data={"/assets/countries.geojson"} />
-        <Layer
-          id='countries'
-          type='fill'
-          source='countries'
-          paint={{
-            'fill-color': '#088',
-            'fill-opacity': 0.7,
-            'fill-outline-color': "#fff",
-          }}
-          layout={{
-            'visibility': 'visible'
-          }}
-        />
-        <Source id='cities' type='geojson' data={"/assets/cities.geojson"} />
-        <Layer
-          id='cities'
-          type='circle'
-          source='cities'
-          paint={{
-            'circle-color': '#000',
-            'circle-stroke-color': "#fff",
-            'circle-stroke-width': .5
-          }}
-          layout={{
-            'visibility': 'visible'
-          }}
-        />
+        <Sources />
+        <Layers />
       </MapGL>
     </React.Fragment>
   );
