@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import MapGL, { Source, Layer } from "@urbica/react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { MAPBOX_ACCESS_TOKEN } from "../../constants";
-import { layersConfig } from "../../constants";
+import { MAPBOX_ACCESS_TOKEN, layersConfig } from "../../constants";
 
 export const MapComponent = (props) => {
-  const { fetchSourceData, sources, layers, addLayer, switchVisibility } = props;
+  const { fetchSourceData, sources, layers, addLayer } = props;
   const [viewport, setViewport] = useState({
     latitude: 0,
     longitude: 0,
@@ -13,7 +12,6 @@ export const MapComponent = (props) => {
   });
 
   useEffect(() => {
-    console.log(layersConfig);
     layersConfig.forEach((l) => {
       fetchSourceData(l.dataUrl, l.id);
       addLayer({
@@ -24,11 +22,12 @@ export const MapComponent = (props) => {
         layout: l.layout,
       });
     });
-  }, [fetchSourceData, addLayer, switchVisibility]);
+  }, [fetchSourceData, addLayer]);
 
   const renderSource = (source) => (
     <Source key={source.id} id={source.id} type={source.type} data={source.data}></Source>
   );
+
   const renderLayer = (layer) => (
     <Layer
       key={layer.id}

@@ -1,6 +1,6 @@
 import "antd/dist/antd.css";
 import { MapController as Map } from "./modules/map/map-controller";
-import { LayersGroup } from "./modules/layers-group/LayersGroup";
+import { LayersGroupController as LayersGroup } from "./modules/layers-group/layers-group-controller";
 import { FiltersList } from "./modules/filters-list/FiltersList";
 
 export const App = (props) => {
