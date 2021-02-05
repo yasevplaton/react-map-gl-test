@@ -1,0 +1,19 @@
+.filters-list {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.filters-list .ant-collapse {
+  background: none;
+  border: none;
+}
+
+.filters-list .ant-collapse-item {
+  border: none;
+}
+
+.filters-list .ant-collapse-content {
+  border: none;
+}

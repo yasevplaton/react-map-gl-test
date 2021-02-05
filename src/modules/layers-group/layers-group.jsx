@@ -6,13 +6,19 @@ export const LayersGroup = (props) => {
   const { layers } = props;
 
   const renderLayerControl = (layer) => {
-    return <LayerControl key={layer.id} layer={layer} />;
+    return (
+      <li key={layer.id}>
+        <LayerControl layer={layer} />
+      </li>
+    );
   };
 
   return (
     <div className="layers-group">
-      <h3 style={{ "textAlign": "center" }}>Слои</h3>
-      {layers.length && layers.map(renderLayerControl)}
+      <h3 className="text-align-center">Слои</h3>
+      <ul>
+        {layers.length && layers.map(renderLayerControl)}
+      </ul>
     </div>
   );
 };

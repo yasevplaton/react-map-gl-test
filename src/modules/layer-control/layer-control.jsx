@@ -3,12 +3,6 @@ import { Checkbox } from "antd";
 
 export const LayerControl = (props) => {
   const { layer, switchVisibility } = props;
-  // const checkboxVisibilityMap = useMemo(() => {
-  //   const map = new Map();
-  //   map.set(true, "visible");
-  //   map.set(false, "none");
-  //   return map;
-  // }, []);
 
   const onChange = useCallback((e) => {
     switchVisibility(layer.id);

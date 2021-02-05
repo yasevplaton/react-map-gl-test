@@ -31,11 +31,13 @@ export const layersConfig = [
     dataUrl: "/assets/countries.geojson",
     source: "countries",
     ...countriesStyle,
+    filterFields: ["CONTINENT", "ECONOMY", "INCOME_GRP"],
   },
   {
     id: "cities",
     dataUrl: "/assets/cities.geojson",
     source: "cities",
     ...citiesStyle,
+    filterFields: [],
   },
 ];

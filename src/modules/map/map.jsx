@@ -20,6 +20,7 @@ export const MapComponent = (props) => {
         type: l.type,
         paint: l.paint,
         layout: l.layout,
+        filterFields: l.filterFields
       });
     });
   }, [fetchSourceData, addLayer]);

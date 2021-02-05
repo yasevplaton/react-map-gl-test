@@ -6,6 +6,7 @@ export const addLayerAction = (layer) => ({
     type: layer.type,
     paint: layer.paint,
     layout: layer.layout,
+    filterFields: layer.filterFields,
   },
 });
 
