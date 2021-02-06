@@ -1,14 +1,18 @@
-// import { connect } from "react-redux";
-// import { FilterLayerGroup } from "./filter-layer-group";
+import { connect } from "react-redux";
+import { FilterLayerGroup } from "./filter-layer-group";
+import { clearFilters } from "../../actions/filters";
 
-// const mapStateToProps = (state) => {
-//   return {
-//     layers: state.layers,
-//     sources: state.sources,
-//   };
-// };
+const mapStateToProps = (state) => {
+  return {
+    filters: state.filters,
+  };
+};
 
-// export const FilterLayerGroupController = connect(
-//   mapStateToProps,
-//   null
-// )(FilterLayerGroup);
+const mapDispatchToProps = {
+  clearFilters,
+};
+
+export const FilterLayerGroupController = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FilterLayerGroup);

@@ -1,0 +1,8 @@
+.filter-control + .filter-control {
+  margin-top: 5px;
+}
+
+.btn--clear-filters {
+  cursor: pointer;
+  text-align: right;
+}

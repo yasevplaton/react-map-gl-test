@@ -15,7 +15,7 @@ export const LayersGroup = (props) => {
 
   return (
     <div className="layers-group">
-      <h3 className="text-align-center">Слои</h3>
+      <h3 className="text-align-center">LAYERS</h3>
       <ul>
         {layers.length && layers.map(renderLayerControl)}
       </ul>

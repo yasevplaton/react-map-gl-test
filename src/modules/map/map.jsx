@@ -4,7 +4,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { MAPBOX_ACCESS_TOKEN, layersConfig } from "../../constants";
 
 export const MapComponent = (props) => {
-  const { fetchSourceData, sources, layers, addLayer } = props;
+  const { fetchSourceData, sources, layers, addLayer, filters, clearFilters } = props;
   const [viewport, setViewport] = useState({
     latitude: 0,
     longitude: 0,
@@ -20,25 +20,35 @@ export const MapComponent = (props) => {
         type: l.type,
         paint: l.paint,
         layout: l.layout,
-        filterFields: l.filterFields
+        filterFields: l.filterFields,
       });
+      clearFilters(l.id);
     });
-  }, [fetchSourceData, addLayer]);
+  }, [fetchSourceData, addLayer, clearFilters]);
 
-  const renderSource = (source) => (
-    <Source key={source.id} id={source.id} type={source.type} data={source.data}></Source>
+  const renderSource = ({ id, type, data }) => (
+    <Source key={id} id={id} type={type} data={data} />
   );
 
-  const renderLayer = (layer) => (
+  const renderLayer = ({ id, source, type, paint, layout }) => (
     <Layer
-      key={layer.id}
-      id={layer.id}
-      source={layer.source}
-      type={layer.type}
-      paint={layer.paint}
-      layout={layer.layout}
-    ></Layer>
+      key={id}
+      id={id}
+      source={source}
+      type={type}
+      paint={paint}
+      layout={layout}
+      filter={filters[id].resultExpression}
+    />
   );
+
+  // const renderFilter = (layer) => (
+  //   <Filter
+  //     key={layer.id}
+  //     layerId={layer.id}
+  //     filter={filters[layer.id].resultExpression}
+  //   />
+  // );
 
   return (
     <React.Fragment>
@@ -51,6 +61,7 @@ export const MapComponent = (props) => {
       >
         {sources.length && sources.map(renderSource)}
         {layers.length && layers.map(renderLayer)}
+        {/* {layers.length && layers.map(renderFilter)} */}
       </MapGL>
     </React.Fragment>
   );

@@ -32,6 +32,7 @@ export const layersConfig = [
     source: "countries",
     ...countriesStyle,
     filterFields: ["CONTINENT", "ECONOMY", "INCOME_GRP"],
+    filter: ["all"],
   },
   {
     id: "cities",
@@ -39,5 +40,11 @@ export const layersConfig = [
     source: "cities",
     ...citiesStyle,
     filterFields: [],
+    filter: ["all"],
   },
 ];
+
+export const filtersConfig = {
+  countries: null,
+  cities: null,
+};

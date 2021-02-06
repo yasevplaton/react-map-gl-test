@@ -1,13 +1,16 @@
 import React, { useMemo } from "react";
 import { groupBy } from "lodash";
+import { Typography } from "antd";
 import { FilterControl } from "../filter-control/filter-control";
+import "./filter-layer-group.css"
 
 export const FilterLayerGroup = React.memo((props) => {
-  const { layer, source } = props;
+  const { layer, source, clearFilters, filters } = props;
+  const { Text } = Typography;
   const features = source.data.features;
   const filterFields = layer.filterFields;
 
-  const filterFieldsValues = useMemo(() => {
+  const filterFieldValues = useMemo(() => {
     const obj = {}
     filterFields.forEach(ff => {
       obj[ff] = groupBy(features, (f) => f.properties[ff])
@@ -17,13 +20,27 @@ export const FilterLayerGroup = React.memo((props) => {
   }, [filterFields, features]);
 
   const renderFilterControl = (fieldName, index) => {
+    const filterOptions = Object.keys(filterFieldValues[fieldName])
     return (
-      <li key={index}>
+      <li key={index} className="filter-control">
         <b>{fieldName}</b>
-        <FilterControl options={Object.keys(filterFieldsValues[fieldName])} />
+        <FilterControl options={filterOptions} fieldName={fieldName} layer={layer} />
       </li>
     )
   }
 
-  return filterFields.length ? <ul>{filterFields.map(renderFilterControl)}</ul> : <p>no filters</p>
+  const onClearFilters = () => {
+    clearFilters(layer.id)
+  };
+
+  return filterFields.length ? (
+    <React.Fragment>
+      {
+        filters[layer.id].filters.length > 0 && <Text type="secondary" className="btn--clear-filters" onClick={onClearFilters}>clear all filters</Text>
+      }
+      <ul>{filterFields.map(renderFilterControl)}</ul>
+    </React.Fragment>
+  )
+    :
+    <p>no filters</p>
 })

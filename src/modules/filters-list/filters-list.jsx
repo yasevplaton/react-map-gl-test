@@ -1,7 +1,7 @@
 import React from "react";
 import { Collapse } from 'antd';
 import "./filters-list.css";
-import { FilterLayerGroup } from "../filter-layer-group/filter-layer-group";
+import { FilterLayerGroupController as FilterLayerGroup } from "../filter-layer-group/filter-layer-group-controller";
 
 export const FiltersList = (props) => {
   const { layers, sources } = props;
@@ -19,7 +19,7 @@ export const FiltersList = (props) => {
   return (
     <React.Fragment>
       <div className="filters-list">
-        <h3 className="text-align-center">Фильтры</h3>
+        <h3 className="text-align-center">FILTERS</h3>
         <Collapse>
           {
             layers.length && layers.map(renderFilterLayerGroup)

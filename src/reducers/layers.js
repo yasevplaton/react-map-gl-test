@@ -8,8 +8,8 @@ const layers = (state = INITIAL_STATE, action) => {
       return state.map((l) => {
         if (l.id === action.payload.id) {
           return l.layout.visibility === "visible"
-            ? { ...l, layout: { visibility: "none" } }
-            : { ...l, layout: { visibility: "visible" } };
+            ? { ...l, layout: { ...l.layout, visibility: "none" } }
+            : { ...l, layout: { ...l.layout, visibility: "visible" } };
         } else {
           return l;
         }

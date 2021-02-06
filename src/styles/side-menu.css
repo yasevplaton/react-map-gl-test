@@ -5,4 +5,5 @@
   right: 10px;
   min-width: 250px;
   overflow-y: auto;
+  max-height: 95%;
 }

@@ -17,3 +17,8 @@
 .filters-list .ant-collapse-content {
   border: none;
 }
+
+.filters-list .ant-collapse-content-box {
+  padding-top: 0;
+  padding-bottom: 0;
+}
