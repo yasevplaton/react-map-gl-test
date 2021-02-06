@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { switchVisibility } from "../../actions/layers";
+import { switchVisibility } from "../../store/actions/layers";
 import { LayerControl } from "./layer-control";
 
 const mapDispatchToProps = {

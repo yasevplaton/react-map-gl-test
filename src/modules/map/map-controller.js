@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
-import { fetchSourceData } from "../../actions/sources";
-import { addLayer, switchVisibility } from "../../actions/layers";
-import { clearFilters } from "../../actions/filters";
+import { fetchSourceData } from "../../store/actions/sources";
+import { addLayer, switchVisibility } from "../../store/actions/layers";
+import { clearFilters } from "../../store/actions/filters";
 import { MapComponent } from "./map";
 
 const mapStateToProps = (state) => {

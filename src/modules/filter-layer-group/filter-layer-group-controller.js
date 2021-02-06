@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { FilterLayerGroup } from "./filter-layer-group";
-import { clearFilters } from "../../actions/filters";
+import { clearFilters } from "../../store/actions/filters";
 
 const mapStateToProps = (state) => {
   return {

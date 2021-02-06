@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MapGL, { Source, Layer } from "@urbica/react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { MAPBOX_ACCESS_TOKEN, layersConfig } from "../../constants";
+import { MAPBOX_ACCESS_TOKEN, layersConfig } from "../../constants/constants";
 
 export const MapComponent = (props) => {
   const { fetchSourceData, sources, layers, addLayer, filters, clearFilters } = props;
@@ -42,14 +42,6 @@ export const MapComponent = (props) => {
     />
   );
 
-  // const renderFilter = (layer) => (
-  //   <Filter
-  //     key={layer.id}
-  //     layerId={layer.id}
-  //     filter={filters[layer.id].resultExpression}
-  //   />
-  // );
-
   return (
     <React.Fragment>
       <MapGL
@@ -61,7 +53,6 @@ export const MapComponent = (props) => {
       >
         {sources.length && sources.map(renderSource)}
         {layers.length && layers.map(renderLayer)}
-        {/* {layers.length && layers.map(renderFilter)} */}
       </MapGL>
     </React.Fragment>
   );
