@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { Checkbox } from "antd";
 
-export const LayerControl = (props) => {
+export const LayerControl = React.memo((props) => {
   const { layer, switchVisibility } = props;
 
   const onChange = useCallback((e) => {
@@ -10,10 +10,10 @@ export const LayerControl = (props) => {
 
   return (
     <Checkbox
-      checked={layer.layout.visibility === "visible" ? true : false}
+      checked={layer.layout.visibility === "visible"}
       onChange={onChange}
     >
       {layer.id}
     </Checkbox>
   );
-};
+});

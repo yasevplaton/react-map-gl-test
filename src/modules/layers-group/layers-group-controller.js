@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { switchVisibility } from "../../store/actions/layers";
 import { LayersGroup } from "./layers-group";
 
 const mapStateToProps = (state) => {
@@ -8,11 +7,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = {
-  switchVisibility,
-};
-
 export const LayersGroupController = connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(LayersGroup);

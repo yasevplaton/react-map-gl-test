@@ -1,9 +1,9 @@
 import React from "react";
 import { Collapse } from 'antd';
 import "./filters-list.css";
-import { FilterLayerGroupController as FilterLayerGroup } from "../filter-layer-group/filter-layer-group-controller";
+import { FilterLayerGroupController as FilterLayerGroup } from "./filter-layer-group/filter-layer-group-controller";
 
-export const FiltersList = (props) => {
+export const FiltersList = React.memo((props) => {
   const { layers, sources } = props;
   const { Panel } = Collapse;
 
@@ -28,4 +28,4 @@ export const FiltersList = (props) => {
       </div>
     </React.Fragment>
   );
-}
+})

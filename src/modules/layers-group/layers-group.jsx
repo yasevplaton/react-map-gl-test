@@ -1,8 +1,8 @@
 import React from "react";
 import "./layers-group.css";
-import { LayerControlController as LayerControl } from "../layer-control/layer-control-controller";
+import { LayerControlController as LayerControl } from "./layer-control/layer-control-controller";
 
-export const LayersGroup = (props) => {
+export const LayersGroup = React.memo((props) => {
   const { layers } = props;
 
   const renderLayerControl = (layer) => {
@@ -21,4 +21,4 @@ export const LayersGroup = (props) => {
       </ul>
     </div>
   );
-};
+});
