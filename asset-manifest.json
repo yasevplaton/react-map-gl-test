@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-map-gl-test/static/css/main.e925df89.chunk.css",
+    "main.js": "/react-map-gl-test/static/js/main.a80dccdc.chunk.js",
+    "main.js.map": "/react-map-gl-test/static/js/main.a80dccdc.chunk.js.map",
+    "runtime-main.js": "/react-map-gl-test/static/js/runtime-main.403f2eed.js",
+    "runtime-main.js.map": "/react-map-gl-test/static/js/runtime-main.403f2eed.js.map",
+    "static/css/2.7a6ce557.chunk.css": "/react-map-gl-test/static/css/2.7a6ce557.chunk.css",
+    "static/js/2.b17106b9.chunk.js": "/react-map-gl-test/static/js/2.b17106b9.chunk.js",
+    "static/js/2.b17106b9.chunk.js.map": "/react-map-gl-test/static/js/2.b17106b9.chunk.js.map",
+    "index.html": "/react-map-gl-test/index.html",
+    "static/css/2.7a6ce557.chunk.css.map": "/react-map-gl-test/static/css/2.7a6ce557.chunk.css.map",
+    "static/css/main.e925df89.chunk.css.map": "/react-map-gl-test/static/css/main.e925df89.chunk.css.map",
+    "static/js/2.b17106b9.chunk.js.LICENSE.txt": "/react-map-gl-test/static/js/2.b17106b9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.403f2eed.js",
+    "static/css/2.7a6ce557.chunk.css",
+    "static/js/2.b17106b9.chunk.js",
+    "static/css/main.e925df89.chunk.css",
+    "static/js/main.a80dccdc.chunk.js"
+  ]
+}
